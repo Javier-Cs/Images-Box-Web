@@ -1,27 +1,32 @@
 <div class="header-left">
+  <span class="app-title">Sistema de Ventas</span>
+  <p></p>
   <img src="images/image.png" alt="Logo" class="logo" />
   <img src="images/IMG_1.jpg" alt="Logo" class="logo" />
   <img src="images/IMG_2.jpg" alt="Logo" class="logo" />
   <img src="images/IMG_3.jpg" alt="Logo" class="logo" />
   <img src="images/IMG_4.jpg" alt="Logo" class="logo" />
   <img src="images/perfil.png" alt="Logo" class="logo" />
-  <p></p>
-  <span class="app-title">Sistema de Ventas</span>
 </div>
 
 <style>
-  .header-left {
-  display: flex;
-  flex-wrap: wrap; /* Permite que las imágenes bajen a otra fila */
-  gap: 10px;       /* Espacio entre imágenes */
-  max-width: 400px; /* Ajusta el ancho del collage */
+.header-left {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: 10px; /* altura base para el "flujo" */
+  gap: 10px;
 }
 
 .header-left .logo {
-  width: 100px;    /* Tamaño uniforme */
-  height: auto;
+  width: 100%;
+  border-radius: 8px;
   object-fit: cover;
-  border-radius: 8px; /* Bordes redondeados opcionales */
 }
+
+/* Truco para que cada imagen ocupe varias filas según su altura */
+.header-left .logo {
+  grid-row-end: span 30; /* Ajusta este valor para variar */
+}
+
 
 </style>
